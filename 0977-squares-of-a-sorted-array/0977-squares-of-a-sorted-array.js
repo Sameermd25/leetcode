@@ -3,9 +3,22 @@
  * @return {number[]}
  */
 var sortedSquares = function(nums) {
-    for(let i=0;i<nums.length;i++){
-        nums[i]=nums[i]*nums[i]
+    let l=0
+    let r=nums.length-1;
+    let res=[];
+    let pos=nums.length-1;
+    while(l<=r){
+        let ls=nums[l]*nums[l];
+        let rs=nums[r]*nums[r];
+        if(ls>rs){
+            res[pos]=ls
+            l++
+        }
+        else{
+            res[pos]=rs
+            r--
+        }
+        pos--;
     }
-    nums.sort((a,b)=>a-b)
-    return nums
+    return res
 };
