@@ -5,7 +5,7 @@
 var threeSum = function(nums) {
     nums.sort((a,b)=>a-b);
     let res=[];
-    for(let i=0;i<nums.length;i++){
+    for(let i=0;i<nums.length-2;i++){
         if(nums[i]==nums[i-1]){
             continue;
         }
