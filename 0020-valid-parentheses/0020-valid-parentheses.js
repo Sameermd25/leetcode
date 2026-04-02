@@ -19,5 +19,8 @@ var isValid = function(s) {
             if(map[s[i]]!=last) return false
         }
     }
+    if(arr.length!==0){
+        return false
+    }
     return true;
 };
