@@ -3,18 +3,14 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-    s=s.trim();
-    let a=s.split(" ");
-    for(let i=0;i<a.length;){
-        if(a[i]=="") a.splice(i,1)
-        else i++;
-    }
-    let l=0;
-    let r=a.length-1;
+    s=s.trim()
+    let arr=s.split(" ").filter(x=>x!="")
+    let l=0
+    let r=arr.length-1;
     while(l<r){
-        [a[l],a[r]]=[a[r],a[l]];
+        [arr[l],arr[r]]=[arr[r],arr[l]]
         l++;
         r--;
     }
-    return a.join(" ")
+    return arr.join(" ")
 };
