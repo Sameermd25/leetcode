@@ -2,23 +2,22 @@
  * @param {number[]} height
  * @return {number}
  */
-var maxArea = function(height) {
+var maxArea = function(height) { 
     let l=0;
     let r=height.length-1;
-    let water=0;
+
+    let max=0;
 
     while(l<r){
-        let min=Math.min(height[l],height[r]);
-        let width=r-l;
-        let area=min*width
-        water=Math.max(water,area);
-
+        let minV=Math.min(height[l],height[r]);
+        let area=minV*(r-l);
+        max=Math.max(area,max)
         if(height[l]<height[r]){
             l++
-        }else{
-            r--
         }
-
+        else{
+            r--;
+        }
     }
-    return water;
+    return max
 };
