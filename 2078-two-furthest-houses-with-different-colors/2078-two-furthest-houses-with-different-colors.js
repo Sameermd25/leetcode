@@ -4,11 +4,16 @@
  */
 var maxDistance = function(colors) {
     let max=0;
+    for(let i=colors.length-1;i>=0;i--){
+        if(colors[i]!=colors[0]){
+            max=i;
+            break;
+        }
+    }
     for(let i=0;i<colors.length;i++){
-        for(let j=i+1;j<colors.length;j++){
-            if(colors[i]!=colors[j]){
-                max=Math.max((j-i),max)
-            }
+        if(colors[i]!=colors[colors.length-1]){
+            max=Math.max(max,colors.length-1-i);
+            break;
         }
     }
     return max;
