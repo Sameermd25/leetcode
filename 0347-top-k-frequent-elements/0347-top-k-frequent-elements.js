@@ -8,13 +8,6 @@ var topKFrequent = function(nums, k) {
     for(let i=0;i<nums.length;i++){
         map.set(nums[i],(map.get(nums[i])||0)+1)
     }
-    // console.log(map)
-    // let max=0
-    // let res=[];
-    // for(let [key,value] of map.entries()){
-    //     console.log(key,value)
-        
-    // }
     let arr=[...map.entries()].sort((a,b)=>b[1]-a[1])
     
     arr.length=k
